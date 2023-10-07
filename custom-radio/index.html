@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div>
+    <span>Quel est votre statut matrimonial</span>
+    <div>
+      <label for="married">Marie</label>
+      <input :id="married" type="radio" name="statut"
+        style="--status-color:rgb(66, 81, 191); --activate-bg-color:rgb(124, 129, 163);">
+    </div>
+    <div>
+      <label for="single">Celibataire</label>
+      <input :id="single" name="statut" type="radio"
+        style="--status-color:rgb(191, 66, 66); --activate-bg-color:rgb(180, 141, 141);">
+    </div>
+  </div>
+</body>
+
+</html>

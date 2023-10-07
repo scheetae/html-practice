@@ -1,0 +1,42 @@
+:root {
+  --color:#7e7e7e;
+  --bg-color:#eae9e9;
+  --activate-bg-color:#eae9e9;
+  --status-color:rgb(66, 81, 191);
+}
+
+input {
+  width: 40px;
+  height: 20px;
+  border: 1.4px solid var(--color);
+  background-color: var(--bg-color);
+  border-radius: 20px;
+  appearance: none;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+}
+
+input::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  top: 0;
+  transform: translateX(0);
+  background: var(--color);
+  border-radius: 20px;
+  transition: all .4s;
+}
+
+input:checked {
+  border: 2px solid var(--status-color);
+  padding: 1px;
+  background-color: var(--activate-bg-color);
+}
+
+input:checked::before{
+  background: var(--status-color);
+  transform: translateX(80%);
+
+}

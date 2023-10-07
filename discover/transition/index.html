@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <section>
+    <div class="active" style="--color:rgb(22, 14, 16)">Communities</div>
+    <div style="--color:rgb(3, 43, 38)">Chats</div>
+    <div style="--color:rgb(3, 34, 83)">Status</div>
+    <div style="--color:rgb(43, 3, 38)">Calls</div>
+  </section>
+
+  <script>
+    const items = document.querySelectorAll('div');
+    let activeItem;
+    items.forEach((i) => {
+      i.addEventListener('click', (e) => {
+        activeItem = i;
+        items.forEach((_i, _index) => {
+          if(items[_index] === activeItem) {
+            items[_index].classList.add('active')
+          }
+          else {
+            items[_index].classList.remove('active')
+
+          }
+      })
+        })
+    })
+  </script>
+</body>
+
+</html>
