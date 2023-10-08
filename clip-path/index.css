@@ -1,0 +1,40 @@
+section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.content {
+  height: 90px;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 15% 50%, 0% 0%);
+  position: relative;
+  max-width: 250px;
+  color: white;
+  font-weight: 500;
+}
+
+.content:is(:nth-child(1)) {
+  background-color: #2A52A2;
+}
+
+.content:not(:nth-child(1)) {
+  background-color:#86A4DF;
+}
+
+.content > div{
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 70%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.content:is(:nth-child(3)) > div {
+  top: 8%;
+  left: 16%;
+}
