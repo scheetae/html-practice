@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #bcbeed;
+      }
+    </style>
+  </head>
+  <body>
+    <button>new post</button>
+    <h1>see directory</h1>
+    <div></div>
+    <script type="module">
+      const files = document.querySelector("div");
+      const postBtn = document.querySelector("button");
+      const directory = document.querySelector("h1");
+
+      const getFiles = async () => {
+
+        
+
+
+        const [fileHandle] = await window.showOpenFilePicker({
+          multiple: false,
+          excludeAcceptAllOption: true,
+          types: [
+            {
+              description: "media",
+              accept: {
+                "image/*": [".png", ".gif", ".jpeg", ".jpg"],
+              }
+            }
+          ],
+        });
+
+        const file = await fileHandle.getFile()
+        console.log(file)
+      
+
+        const image = document.createElement("img");
+        image.setAttribute("src", URL.createObjectURL(file))
+        
+        files.appendChild(image)
+      };
+      postBtn.addEventListener("click", getFiles);
+    </script>
+  </body>
+</html>

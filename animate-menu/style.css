@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  display: flex;
+}
+
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 15px;
+  background: #fff241;
+  width: 0px;
+  transition: all 0.8s;
+}
+
+span {
+  padding: 10px;
+  -webkit-text-stroke: 2px #170808;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
